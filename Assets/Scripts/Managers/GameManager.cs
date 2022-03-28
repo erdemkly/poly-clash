@@ -12,6 +12,7 @@ namespace Managers
         private void Start()
         {
             Application.targetFrameRate = 60;
+            StartEventHandle();
         }
         public void StartEventHandle()
         {

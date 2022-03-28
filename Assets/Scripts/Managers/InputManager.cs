@@ -87,7 +87,8 @@ namespace Managers
             if(allStates == null) allStates = new Dictionary<string, State>();
             allStates.Add("EmptyState", new EmptyState());
             allStates.Add("RunState", new RunState());
-            //[NEW_STATE]
+		allStates.Add("CardState", new CardState());
+		//[NEW_STATE]
         }
 
         private void Update()

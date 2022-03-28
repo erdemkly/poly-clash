@@ -9,6 +9,7 @@ namespace ScriptableObjects
         public Sprite sprite;
         [Range(1,CardManager.MAXStamina)]public int stamina;
         public int damage;
+        public GameObject prefab;
         [Range(0,500)]public int health;
     }
 }

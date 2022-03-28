@@ -16,4 +16,5 @@ MonoBehaviour:
   sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   stamina: 8
   damage: 0
+  prefab: {fileID: 6309396000366609271, guid: ed456e0663fd8374db3ec2886edce72d, type: 3}
   health: 0
