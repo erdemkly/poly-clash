@@ -21,6 +21,7 @@ namespace Runtime
             CardManager.Instance.Stamina-=OwnCard.stamina;
             ownCardSlot.SetCard(null);
             OwnCard = null;
+            CardManager.Instance.SetNextCard();
         }
         public void SetCard(Card card,CardSlot slot)
         {

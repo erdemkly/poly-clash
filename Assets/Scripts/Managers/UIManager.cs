@@ -7,5 +7,8 @@ namespace Managers
     {
         [SerializeField] private GameUI gameUI;
         public GameUI GameUI => gameUI;
+
+        [SerializeField] private InformationUI informationUI;
+        public InformationUI InformationUI => informationUI;
     }
 }

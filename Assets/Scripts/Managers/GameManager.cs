@@ -8,7 +8,12 @@ namespace Managers
     public class GameManager : MonoSingleton<GameManager>
     {
         public UnityEvent onStartEvent;
+        [SerializeField]private GameObject playerAreaParticle;
 
+        public void SetPlayerArea(bool active)
+        {
+            playerAreaParticle.SetActive(active);
+        }
         private void Start()
         {
             Application.targetFrameRate = 60;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Helper;
 using NaughtyAttributes;
 using Other;
 using Runtime;
@@ -22,6 +23,7 @@ namespace Managers
 
         public List<CardSlot> allSlots;
         public SelectedCard selectedCard;
+        public NextCardSlot nextCardSlot;
 
         public const int MAXStamina=10;
         private int _stamina;
@@ -57,6 +59,24 @@ namespace Managers
                 var slot = allSlots[index];
                 slot.SetCard(allCards[index]);
             }
+            SetNextCard();
+        }
+
+        public void SetNextCard()
+        {
+            if (nextCardSlot != null)
+            {
+                for (int i = 0; i < allSlots.Count; i++)
+                {
+                    if (allSlots[i].OwnCard == null)
+                    {
+                        allSlots[i].SetCard(nextCardSlot.OwnCard);
+                        nextCardSlot.SetCard(null);
+                        break;
+                    }
+                }
+            }
+            nextCardSlot.SetCard(RandomItemGeneric<Card>.GetRandom(allCards.ToArray()));
         }
 
         private float _time;

@@ -25,6 +25,7 @@ namespace Runtime
         public void OnPointerDown(PointerEventData eventData)
         {
             if (InputManager.Instance.CurrentStateName != "CardState") return;
+            if (disablePanel.activeSelf) return;
             if (OwnCard == null) return;
             if (CardManager.Instance.Stamina < OwnCard.stamina) return;
             DOTween.Rewind("card");
@@ -33,11 +34,13 @@ namespace Runtime
         public void OnDrag(PointerEventData eventData)
         {
             if (InputManager.Instance.CurrentStateName != "CardState") return;
+            if (disablePanel.activeSelf) return;
             if (OwnCard == null) return;
             if (cardObj.activeSelf)
             {
                 CardManager.Instance.selectedCard.SetCard(OwnCard, this);
                 cardObj.SetActive(false);
+                GameManager.Instance.SetPlayerArea(true);
             }
             else
             {
@@ -51,6 +54,7 @@ namespace Runtime
         public void OnPointerUp(PointerEventData eventData)
         {
             if (InputManager.Instance.CurrentStateName != "CardState") return;
+            GameManager.Instance.SetPlayerArea(false);
             if (CameraManager.Instance.ScreenToWorldRay(eventData.position,1<<8,out var hit) && hit.collider.CompareTag("PlayerArea"))
             {
                 CardManager.Instance.selectedCard.PlaceCard();
