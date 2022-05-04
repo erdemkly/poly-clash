@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 1229778672306749407}
   - component: {fileID: 1229778672306749406}
   - component: {fileID: 1229778672306749405}
+  - component: {fileID: -9206297551497798157}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -349,6 +350,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1229778672306749406}
   txtSlider: {fileID: 1229778672176169712}
+--- !u!114 &-9206297551497798157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229778672306749379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bcfc65c33b376f4e9e1490264e45926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  positionAxis:
+    x: 1
+    y: 1
+    z: 1
+  scaleAxis:
+    x: 0
+    y: 0
+    z: 0
+  eulerAxis:
+    x: 0
+    y: 0
+    z: 0
+  quaternionAxis:
+    x: 0
+    y: 0
+    z: 0
+  clampedAxis:
+    x: 0
+    y: 0
+    z: 0
+    minX: 0
+    maxX: 0
+    minY: 0
+    maxY: 0
+    minZ: 0
+    maxZ: 0
+  posOffset: {x: 0, y: 2.5, z: 0}
+  followType: 0
+  smoothness: 1
 --- !u!1 &1229778672630414276
 GameObject:
   m_ObjectHideFlags: 0
