@@ -1,48 +1,27 @@
 using System;
 using Abstracts;
+using DG.Tweening;
 using Managers;
 using Other;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Runtime.Castle
 {
-    public class Castle : MonoBehaviour, IDamageable
+    public class Castle : DamageableObject
     {
-        private int health;
-        [SerializeField]private int maxHealth;
-        private MySlider healthBar;
+    [SerializeField] private UnityEvent onDeadEvent;
+    
 
-        public MySlider HealthBar
-        {
-            get => healthBar;
-            set => healthBar = value;
-        }
-        public int MaxHealth
-        {
-            get => maxHealth;
-            set
-            {
-                healthBar.Slider.maxValue = MaxHealth;
-                maxHealth = value;
-            }
-        }
-        public int Health
-        {
-            get => health;
-            set
-            {
-                healthBar.Slider.value = value;
-                health = value;
-            }
-        }
         private void OnEnable()
         {
-            healthBar = UIManager.Instance.InformationUI.CreateSlider(transform);
-            MaxHealth = maxHealth;
+            HealthBar = UIManager.Instance.InformationUI.CreateSlider(transform);
+            HealthBar.GetComponent<TransformFollower>().target = transform;
+            MaxHealth = 1000;
             Health = MaxHealth;
         }
-        public void GetDamage(int damage)
+        public override void GetDamage(int damage)
         {
             Health -= damage;
             if (Health <= 0)
@@ -50,9 +29,10 @@ namespace Runtime.Castle
                 OnDead();
             }
         }
-        public void OnDead()
+        public override void OnDead()
         {
-            Debug.Log("Aaaaa");
+            transform.DOScale(0, 0.2f);
+            onDeadEvent?.Invoke();
         }
     }
 }

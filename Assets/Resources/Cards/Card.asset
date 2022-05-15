@@ -16,5 +16,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: edccdabf1eefed54da1aff4204387606, type: 3}
   stamina: 3
   damage: 69
+  attackRange: 2
+  attackCoolDown: 3
   prefab: {fileID: 3116547427053355269, guid: 1298a1ce752e048458a56455fb65163d, type: 3}
   health: 65

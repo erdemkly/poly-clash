@@ -17,8 +17,8 @@ namespace Runtime
             if (OwnCard == null) return;
             if (ownCardSlot == null) return;
 
-            var fighter = Instantiate(OwnCard.prefab, _placePosition, Quaternion.identity).GetComponent<Fighter>();
-            fighter.InitializeFighter(OwnCard.health, OwnCard.damage);
+            var fighter = Instantiate(OwnCard.prefab, _placePosition, Quaternion.identity).GetComponent<Fighter.Fighter>();
+            fighter.InitializeFighter(OwnCard,true);
 
             CardManager.Instance.Stamina -= OwnCard.stamina;
             ownCardSlot.SetCard(null);

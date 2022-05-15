@@ -1341,8 +1341,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3116547427053355271}
   - component: {fileID: 3116547427053355268}
-  - component: {fileID: 3819495462171067713}
   - component: {fileID: 2202014609362374487}
+  - component: {fileID: 226437853505157209}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -1384,19 +1384,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3819495462171067713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3116547427053355269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1058bd328246014484cbf5dd4fd6a5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 0
 --- !u!195 &2202014609362374487
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1419,6 +1406,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &226437853505157209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116547427053355269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59ee325a0e72824eb36ab639f2bdf0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCard: {fileID: 0}
+  isPlayer: 0
+  agent: {fileID: 2202014609362374487}
+  animator: {fileID: 3116547427053355268}
 --- !u!1 &3116547427383397860
 GameObject:
   m_ObjectHideFlags: 0
