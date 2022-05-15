@@ -32,7 +32,7 @@ namespace Runtime.Fighter
             myCard = card;
             isPlayer = player;
             agent.stoppingDistance = card.attackRange;
-            HealthBar = UIManager.Instance.InformationUI.CreateSlider(transform);
+            HealthBar = UIManager.Instance.InformationUI.CreateSlider(transform,isPlayer);
             HealthBar.GetComponent<TransformFollower>().target = transform;
             MaxHealth = myCard.health;
             Health = MaxHealth;
@@ -52,6 +52,7 @@ namespace Runtime.Fighter
                 var nearFighter = GameManager.Instance.playerFighters.OrderByDescending(x =>
                     Vector3.Distance(transform.position, x.transform.position)).FirstOrDefault();
                 if (!nearFighter) return GameManager.Instance.playerCastle;
+                nearFighter.target = this;
                 return nearFighter;
             }
         }
@@ -138,6 +139,7 @@ namespace Runtime.Fighter
         public override void OnDead()
         {
             GameObject.Destroy(gameObject);
+            Destroy(HealthBar.gameObject);
         }
     }
 }

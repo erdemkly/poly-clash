@@ -40,7 +40,7 @@ namespace Managers
         {
             while (!GameManager.Instance.gameIsEnded)
             {
-                yield return new WaitForSeconds(Random.Range(3, 7));
+                yield return new WaitForSeconds(Random.Range(8, 15));
                 PlaceCard();
             }
         }

@@ -8,6 +8,7 @@ namespace Other
     {
         [SerializeField] private Slider slider;
         [SerializeField] private TextMeshProUGUI txtSlider;
+        public Image fillImage;
         public Slider Slider => slider;
 
         public void SetSliderText()

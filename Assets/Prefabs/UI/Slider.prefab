@@ -350,6 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1229778672306749406}
   txtSlider: {fileID: 1229778672176169712}
+  fillImage: {fileID: 1229778672630414278}
 --- !u!114 &-9206297551497798157
 MonoBehaviour:
   m_ObjectHideFlags: 0

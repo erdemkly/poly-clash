@@ -12,11 +12,11 @@ namespace Runtime.Castle
     public class Castle : DamageableObject
     {
     [SerializeField] private UnityEvent onDeadEvent;
-    
 
+    [SerializeField] private bool isPlayer;
         private void OnEnable()
         {
-            HealthBar = UIManager.Instance.InformationUI.CreateSlider(transform);
+            HealthBar = UIManager.Instance.InformationUI.CreateSlider(transform,isPlayer);
             HealthBar.GetComponent<TransformFollower>().target = transform;
             MaxHealth = 1000;
             Health = MaxHealth;
@@ -33,6 +33,7 @@ namespace Runtime.Castle
         {
             transform.DOScale(0, 0.2f);
             onDeadEvent?.Invoke();
+            Destroy(HealthBar.gameObject);
         }
     }
 }
